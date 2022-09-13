@@ -1,0 +1,6 @@
+utilities\Driver.class
+pages\BeymenPage.class
+utilities\ConfigurationReader.class
+testlogger\TestResultLogger.class
+test\BeymenUrunEklemeveSilmeTesti.class
+utilities\ReusableMethods.class
