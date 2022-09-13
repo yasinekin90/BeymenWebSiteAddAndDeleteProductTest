@@ -22,16 +22,16 @@ import java.util.List;
 public class BeymenUrunEklemeveSilmeTesti  {
 
        BeymenPage beymenPage=new BeymenPage();
-      WebDriver driver=Driver.getDriver();
+
       Log log=new Log();
        @Test()
        @Order(1)
        public void ana_Sayfaya_Gidildigini_Dogrula(){
 
-           driver.get(ConfigurationReader.getProperty("url"));
+           Driver.getDriver().get(ConfigurationReader.getProperty("url"));
            log.info("Siteye gidildi");
            String expectedUrl="https://www.beymen.com/";
-           String actualUrl=driver.getCurrentUrl();
+           String actualUrl=Driver.getDriver().getCurrentUrl();
 
            Assertions.assertTrue(expectedUrl.equals(actualUrl),"Ana sayfaya gidilemedi");
            log.info("Site dogrulamasi yapildi.");
@@ -110,7 +110,7 @@ public class BeymenUrunEklemeveSilmeTesti  {
     @Test
     @Order(7)
     public void urun_Adedi_Artir_Ve_Dogrula(){
-       driver.navigate().back();
+       Driver.getDriver().navigate().back();
        beymenPage.bedenSec.click();
        beymenPage.sepeteEkle.click();
        beymenPage.sepeteGit.click();
